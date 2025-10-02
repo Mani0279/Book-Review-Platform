@@ -31,3 +31,21 @@ The app is deployed on Vercel and benefits from automatic builds, global CDN, an
 ---
 
 This platform is ideal for book lovers who want to discover new books, share reviews, and keep track of their reading habits in one place.
+
+
+Backend Overview (Typical) 
+The backend is commonly built using Node.js with Express framework, providing RESTful APIs for:
+
+User authentication and authorization (sign up, login, session management)
+
+CRUD operations for books and user reviews
+
+Managing user-specific reading lists
+
+Integrating with external book data APIs (like Google Books API) to fetch book metadata
+
+Persisting data using MongoDB or similar NoSQL databases for flexible schema
+
+Handling ratings and comments with data models designed for fast queries
+
+This setup enables secure, scalable, and responsive interactions between the frontend and the data layer.
