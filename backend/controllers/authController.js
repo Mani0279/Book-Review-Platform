@@ -1,5 +1,5 @@
 import User from '../models/User.js';
-import generateToken from '../utils/generatetokens.js';  // corrected casing
+import generateToken from '../utils/generateTokens.js';  // corrected casing
 
 // @desc    Register a new user
 // @route   POST /api/auth/signup
