@@ -10,6 +10,7 @@ import BookDetails from './pages/BookDetails';
 import AddBook from './pages/AddBook';
 import EditBook from './pages/EditBook';
 import MyBooks from './pages/MyBooks';
+import MyReviews from './pages/MyReviews';
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <MyBooks />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/my-reviews"
+              element={
+                <ProtectedRoute>
+                  <MyReviews />
                 </ProtectedRoute>
               }
             />

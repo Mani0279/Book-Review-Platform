@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 // Load env vars
 config();
 
@@ -18,17 +19,20 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 // Routes
+
 app.use('/api/auth', authRoutes);
-app.use('/api/books', bookRoutes);
+app.use('/api/books',bookRoutes);
+app.use('/api/reviews', reviewRoutes); 
 
 // Test route
 app.get('/', (req, res) => {
-   res.json({ 
+  res.json({ 
     message: 'Book Review API is running...',
     version: '1.0.0',
     endpoints: {
       auth: '/api/auth',
-      books: '/api/books'
+      books: '/api/books',
+      reviews: '/api/reviews'
     }
   });
 });

@@ -14,12 +14,29 @@ const BookCard = ({ book, onDelete, showActions = false }) => {
 
   const renderStars = (rating) => {
     const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+
     for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span key={i} style={{ color: i <= rating ? '#f39c12' : '#ddd' }}>
-          ★
-        </span>
-      );
+      if (i <= fullStars) {
+        stars.push(
+          <span key={i} style={{ color: '#f39c12' }}>
+            ★
+          </span>
+        );
+      } else if (i === fullStars + 1 && hasHalfStar) {
+        stars.push(
+          <span key={i} style={{ color: '#f39c12' }}>
+            ★
+          </span>
+        );
+      } else {
+        stars.push(
+          <span key={i} style={{ color: '#ddd' }}>
+            ★
+          </span>
+        );
+      }
     }
     return stars;
   };
