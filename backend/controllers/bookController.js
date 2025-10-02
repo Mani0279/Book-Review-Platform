@@ -239,7 +239,7 @@ const getMyBooks = async (req, res) => {
     const totalBooks = await Book.countDocuments({ addedBy: req.user._id });
     const totalPages = Math.ceil(totalBooks / limit);
 
-    const books = await find({ addedBy: req.user._id })
+    const books = await Book.find({ addedBy: req.user._id })
       .populate('addedBy', 'name email')
       .sort('-createdAt')
       .limit(limit)
